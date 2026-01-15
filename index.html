@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Word Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>📘 Word Trainer</h1>
+  <nav>
+    <button onclick="showTab('list')">Kelimelerim</button>
+    <button onclick="showTab('add')">Kelime Ekle</button>
+    <button onclick="showTab('edit')">Düzenle</button>
+    <button onclick="showTab('quiz')">Kelime Sor</button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1️⃣ KELİMELERİM -->
+  <section id="list" class="tab active">
+  <h2>Kelimelerim</h2>
+  <input type="text" id="search" placeholder="Kelime ara..." oninput="renderWords()">
+
+  <div class="list-container">
+    <div id="wordList" class="word-list"></div>
+    <div id="selectedList" class="selected-list">
+      <h3>Seçili Kelimeler</h3>
+    </div>
+  </div>
+</section>
+
+
+  <!-- 2️⃣ KELİME EKLE -->
+  <section id="add" class="tab">
+    <h2>Kelime Ekle</h2>
+
+    <textarea id="quickAdd" placeholder="mechanism (noun) | mekanizma | açıklama"></textarea>
+    <button onclick="addQuick()">Hızlı Ekle</button>
+
+    <hr>
+
+    <input id="word" placeholder="Kelime (noun)">
+    <input id="meaning" placeholder="Türkçe Anlam">
+    <textarea id="description" placeholder="Açıklama"></textarea>
+    <button onclick="addWord()">Kaydet</button>
+  </section>
+
+  <!-- 3️⃣ DÜZENLE -->
+    <section id="edit" class="tab">
+        <h2>Kelimeleri Düzenle</h2>
+        <input type="text" id="editSearch" placeholder="Kelime ara..." oninput="renderEdit()">
+        <div id="editList"></div>
+    </section>
+
+  <!-- 4️⃣ QUIZ -->
+  <section id="quiz" class="tab">
+  <h2>Kelime Sor</h2>
+
+  <div class="quiz-options" style="text-align:center; margin-bottom:20px;">
+    <button onclick="startQuiz('first')">İlk X</button>
+    <button onclick="startQuiz('range')">Aralık</button>
+    <button onclick="startQuiz('selected')">Seçili</button>
+  </div>
+
+  <div id="quizBox"></div>
+</section>
+
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

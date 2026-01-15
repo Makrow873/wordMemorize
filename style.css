@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+header {
+  background: #020617;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list-container {
+  display: flex;
+  gap: 20px;
+}
+.word-list {
+  flex: 3;
+}
+.selected-list h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.selected-list .card {
+  margin-bottom: 8px;
+  padding: 8px;
+}
+.selected-list {
+  flex: 1;
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+header h1 {
+  margin: 0 0 10px 0;
+}
+
+nav button {
+  margin: 5px;
+  background: #1e293b;
+  color: #e5e7eb;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav button:hover {
+  background: #38bdf8;
+  color: #020617;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  background: #38bdf8;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+
+hr {
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+  }
+}
+/* --- Mevcut stil üzerine ekleme --- */
+
+/* GENEL MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+  .list-container {
+    flex-direction: column; /* sağ panel altına geçer */
+  }
+
+  .word-list, .selected-list {
+    flex: 1;
+  }
+
+  nav button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+  }
+}
+
+/* QUIZ TASARIMI */
+.quiz-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.quiz-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.quiz-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.quiz-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.quiz-buttons button:hover {
+  opacity: 0.9;
+}
+
+#meaningBox p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
